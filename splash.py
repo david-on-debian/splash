@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-import warnings, os, sys, io, _io
+import warnings
+import os
+import sys
+import io
 
 i = input("splash 1.0 -#$ ")
 test = False
