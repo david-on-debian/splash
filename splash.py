@@ -65,6 +65,10 @@ etc, etc.
 
 """
 
+license = """
+As of yet, there is no offical license for this project,
+I may inculde it later.
+"""
 
 class Data:
     def __init__(self):
@@ -164,17 +168,9 @@ while True:
         continue
        
     elif "license" in i:
-        license = open("/home/david/legal/splash_license.txt", mode='r', encoding='utf-8')
-        lines = []
-        for line in license:
-            lines.append(line)
-        lines = ' '.join(lines)
-        intro = "---SPLASH 1.0 license---\n"
-        result = str(intro) + str(lines) 
-        print(result)
+        print(license)
         i = input("splash 1.0 -#$ ")
         continue
-    
 
     elif " + " in i[0:10] != None:
         l = i.index(" + ")
