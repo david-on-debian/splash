@@ -138,19 +138,6 @@ test = False
 
 while True:
     i = input(f"{name + ' ' + version} -#$ ")
-    # development option, i recommend you don`t use this. 
-    if test:
-        holder = []
-        if "quit" in i:
-            print("Goodbye!")
-            break
-        elif "exit" in i:
-            print("Goodbye!")
-            break
-        for g in enumerate(i):
-            holder.append(g)
-        print(holder)
-        continue
         
     elif "quit" in i:
         print("Goodbye!")
@@ -676,4 +663,18 @@ while True:
         
     else:
         print("Unknown command, keyword, or operation.")
+        continue
+
+    # development option, i recommend you don`t use this. 
+    if test:
+        holder = []
+        if "quit" in i:
+            print("Goodbye!")
+            break
+        elif "exit" in i:
+            print("Goodbye!")
+            break
+        for g in enumerate(i):
+            holder.append(g)
+        print(holder)
         continue
