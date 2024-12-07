@@ -79,48 +79,6 @@ class Data:
         variable_name = variable
         self.variables[variable_name] = value
 
-
-# I`m not using this yet, but it`s there.
-class Directory:
-    __contents = [] # We might not wont people/programs directly accessing the contents of a directory.
-    name = ""
-    __permissions = "r--" # a good starting point.
-
-    __readables = ["r--", "rw-", "rwx", "r-x"]
-    __writeables = ["-w-", "rw-", "rwx", "-wx"]
-    __executables = ["--x", "r-x", "rwx", "-wx"]
-    __all = ["r--", "-w-", "--x", "rw-", "-wx", "r-x", "rwx"]
-    
-    def __init__(self, name: str, permissions: str):
-        self.name = name
-        if permissions in self.__all:
-            self.__permissions = permissions
-        else:
-            # System.out.println("Invalid Permission set: %s", permissions);
-            print(f"Invalid Permission set: {permissions}.")
-
-    def getContents(self) -> list:
-        if self.__permissions in self.__readables:
-            return self.__contents
-        else:
-            return ["Permisssion Denied"]
-
-    def appendContents(self, toadd) -> bool: # True if success, False if fail.
-        if self.__permissions not in self.__writables:
-            return False
-        if instanceof(toadd, Directory) or instanceof(toadd, File):
-            self.__contents.append(toadd)
-            return True
-        else:
-            return False
-
-class File:
-
-    # I`ll work on this later...
-    
-    def __init__(self):
-        return None
-
 #def to_list(value):
 #    value = list(value)
 #    if value[0] == '[':
@@ -139,7 +97,7 @@ test = False
 while True:
     i = input(f"{name + ' ' + version} -#$ ")
         
-    elif "quit" in i:
+    if "quit" in i:
         print("Goodbye!")
         break
         
