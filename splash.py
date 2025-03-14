@@ -96,6 +96,8 @@ test = False
 
 while True:
     i = input(f"{name + ' ' + version} -#$ ")
+
+    i = i.strip()
         
     if "quit" in i:
         print("Goodbye!")
